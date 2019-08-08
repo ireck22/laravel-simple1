@@ -12,3 +12,40 @@ body{
 
 	color:#ffff;
 }
+.toptitle{
+	width:200px;
+	height:50px;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+#min{
+	width:500px;
+	height:300px;
+	font-size: 25px;
+	font-weight:bold;
+	color:#0000FF;
+	margin-top:60px;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+.mininput{
+
+	display: flex;
+	justify-content:center;
+
+}
+.length{
+	width:350px;
+}
+#min2{
+	display: flex;
+	justify-content:center;
+}
+.minbutn{
+
+	margin-left:10px;
+
+}

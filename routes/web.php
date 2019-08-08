@@ -20,10 +20,15 @@ Route::get('/test', function () {
     return $test;
 });
 
-Route::get('/posts', 'HomeController@index');
-Route::get('/posts/insert', 'HomeController@insert');	
-Route::get('/posts/{id}','HomeController@show');
-Route::delete('/posts/{id}','HomeController@destory');
-Route::post('/posts/create', 'HomeController@create');	
-Route::get('/posts/{id}/edit', 'HomeController@edit');	
-Route::get('del', 'HomeController@deltest');
+Route::get('/posts', 'SimpleController@index');
+Route::get('/posts/insert', 'SimpleController@insert');	
+Route::get('/posts/{id}','SimpleController@show');
+Route::delete('/posts/{id}','SimpleController@destory');
+Route::post('/posts/create', 'SimpleController@create');	
+Route::post('/posts/login', 'SimpleController@login');	
+
+Route::get('/posts/{id}/edit', 'SimpleController@edit');	
+Route::get('del', 'SimpleController@deltest');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
