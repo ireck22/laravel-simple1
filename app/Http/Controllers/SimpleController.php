@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Account;
+use Auth;
 
 class SimpleController extends Controller{
 
@@ -22,12 +23,32 @@ class SimpleController extends Controller{
                 ->with('title','帳號頁')
                 ->with('post',$posts);
     }
+    public function login(){
+
+        // $posts=Account::all();
+        $user=$_POST["user"];
+        $password=$_POST["password"];
+        // return $user." ".$password;//test 輸出
+    
+        
+        if(Auth::attempt(['user'=>$user,'password'=>$password])){
+            
+            return "登入成功";
+
+        }
+
+
+
+        // return "Ok";
+
+    }
 
     public function create(){
         
         $posts=new Account;
         
         $posts->user=$_POST["user"];
+        $posts->password=$_POST["password"];
         $posts->username=$_POST["username"];
         $posts->gender=$_POST["gender"];
         $posts->birthday=$_POST["birthday"];
